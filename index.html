@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jwood Portfolio</title>
+  <title>Jwood - Futuristic Portfolio</title>
   
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -15,7 +15,8 @@
 
   <!-- Header -->
   <header>
-    <h1>Jwood</h1>
+    <div class="overlay"></div>
+    <h1 class="logo">Jwood</h1>
     <p class="quote">“Don’t wait for opportunity. Create it.”</p>
     <nav>
       <ul>
@@ -27,42 +28,45 @@
     </nav>
   </header>
 
-  <!-- Main Content -->
+  <!-- Main -->
   <main>
+    <!-- About Section -->
     <section id="about">
       <h2>About Me</h2>
-      <p>Hello! I'm Chris, a passionate web developer and designer dedicated to creating modern, interactive websites.</p>
+      <p>Hi, I’m <strong>Jwood</strong>—a futuristic web designer & developer creating <span class="highlight">adventurous, energetic, and professional experiences</span> for every user. Let's take your brand to the next dimension.</p>
+      <p class="notice">⚠️ <strong>Note:</strong> A deposit is required before any work commences. This ensures commitment and top-quality delivery.</p>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects">
       <h2>Projects</h2>
       <div class="cards">
-        <div class="card" data-description="A personal blog to showcase my web development journey, using modern technologies and design.">Personal Blog</div>
-        <div class="card" data-description="Small business websites designed to attract clients and enhance online presence.">Small Business Website</div>
-        <div class="card" data-description="A web application to manage tasks and goals efficiently, fully responsive.">Task Manager App</div>
+        <div class="card" data-description="Personal Blog: futuristic design, full responsive, sharing my journey and insights.">Personal Blog</div>
+        <div class="card" data-description="Small Business Website: tailored, professional, designed to convert visitors into clients.">Small Business Website</div>
+        <div class="card" data-description="Task Manager App: dynamic, interactive, futuristic UX to organize your life efficiently.">Task Manager App</div>
       </div>
     </section>
 
+    <!-- Services Section -->
     <section id="services">
       <h2>Services</h2>
       <div class="cards">
-        <div class="card" data-description="I create professional, ATS-optimized CVs that help clients get noticed by employers.">CV Writing</div>
-        <div class="card" data-description="Web Development services: custom, responsive websites tailored to your needs.">Web Development</div>
-        <div class="card" data-description="Graphic Design: logos, social media graphics, and digital artwork.">Graphic Design</div>
-        <div class="card" data-description="Custom T-shirt and mug printing with fast delivery.">T-shirt/Mug Printing</div>
-        <div class="card" data-description="Professional copywriting for websites, ads, and content creation.">Copywriting</div>
-        <div class="card" data-description="Proofreading and editing to make your content flawless.">Proofreading</div>
+        <div class="card" data-description="Professional CV writing to make you stand out in the competitive world.">CV Writing</div>
+        <div class="card" data-description="Custom web development for a futuristic online presence.">Web Development</div>
+        <div class="card" data-description="Creative graphic design for a visual impact that lasts.">Graphic Design</div>
+        <div class="card" data-description="Custom T-shirt & mug printing with fast delivery and creative designs.">T-shirt/Mug Printing</div>
+        <div class="card" data-description="Professional copywriting for websites, ads, and marketing campaigns.">Copywriting</div>
+        <div class="card" data-description="Proofreading & editing for flawless content that impresses.">Proofreading</div>
       </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
       <h2>Contact Me</h2>
       <p>📞 Call me: 
         <a href="tel:+277732286329">+27 773 228 6329</a> / 
         <a href="tel:+27684582879">+27 68 458 2879</a>
       </p>
-
-      <!-- Contact Form -->
       <form id="contactForm" action="https://formspree.io/f/your-endpoint" method="POST">
         <label for="name">Your Name:</label>
         <input type="text" id="name" name="name" placeholder="Your Name" required>
