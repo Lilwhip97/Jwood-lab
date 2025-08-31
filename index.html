@@ -1,99 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jwood's Futuristic Portfolio</title>
-  <link rel="stylesheet" href="portfolio.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jwood Futuristic Portfolio</title>
+<link rel="stylesheet" href="portfolio.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Header / Hero -->
-  <header id="header">
-    <div id="particles-js"></div>
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1 class="logo">Jwood</h1>
-      <p class="quote"><span id="typed-text"></span><span class="cursor">|</span></p>
-      <p class="notice">Deposit is required before work commences</p>
-      <nav>
-        <ul>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#cv">CV Writing</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+
+<!-- Header / Hero -->
+<header id="header">
+  <div id="particles-js"></div>
+  <div id="interactive-svg-bg"></div>
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1 class="logo">Jwood</h1>
+    <p class="quote"><span id="typed-text"></span><span class="cursor">|</span></p>
+    <p class="notice">Deposit is required before work commences</p>
+    <button id="themeToggle">🌙</button>
+    <nav>
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#cv">CV Writing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- About -->
+  <section id="about" class="parallax">
+    <div class="parallax-bg" style="background-image:url('jwood.jpg');"></div>
+    <div class="content">
+      <h2>About Me</h2>
+      <p>I'm Jwood, a web developer and creative futurist. I craft experiences that combine cutting-edge technology, design, and interactivity. My mission is to push imagination into reality.</p>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section id="about" class="parallax">
-      <div class="parallax-bg" style="background-image:url('jwood.jpg');"></div>
-      <div class="content">
-        <h2>About Me</h2>
-        <p>Hello! I'm Jwood, a passionate web developer, designer, and creative futurist. I craft experiences that push the limits of imagination and deliver results.</p>
+  <!-- Projects -->
+  <section id="projects" class="parallax">
+    <div class="parallax-bg" style="background-image:url('projects-bg.jpg');"></div>
+    <div class="content">
+      <h2>Projects</h2>
+      <div class="cards">
+        <div class="card" data-description="Personal blog to showcase web development journey and insights.">Personal Blog</div>
+        <div class="card" data-description="Small business websites with modern UX/UI design.">Business Sites</div>
+        <div class="card" data-description="Task & goal management app with futuristic UX.">Task Manager</div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="projects" class="parallax">
-      <div class="parallax-bg" style="background-image:url('projects-bg.jpg');"></div>
-      <div class="content">
-        <h2>My Projects</h2>
-        <div class="cards">
-          <div class="card" data-description="A personal blog sharing my journey and insights into web development.">Personal Blog</div>
-          <div class="card" data-description="Websites for small businesses with modern UX/UI design.">Business Sites</div>
-          <div class="card" data-description="Task & goal management web application with futuristic features.">Task Manager</div>
+  <!-- Services -->
+  <section id="services" class="parallax">
+    <div class="parallax-bg" style="background-image:url('services-bg.jpg');"></div>
+    <div class="content">
+      <h2>Services</h2>
+      <div class="service-icons">
+        <div class="service">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2L12 22"></path></svg>
+          <p>Web Development</p>
+        </div>
+        <div class="service">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+          <p>Graphic Design</p>
+        </div>
+        <div class="service">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="4" y="4" width="16" height="16"/></svg>
+          <p>CV Writing & Proofreading</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="services" class="parallax">
-      <div class="parallax-bg" style="background-image:url('services-bg.jpg');"></div>
-      <div class="content">
-        <h2>Services</h2>
-        <ul>
-          <li>Web Development</li>
-          <li>Graphic Design</li>
-          <li>T-shirt & Mug Printing</li>
-          <li>Proofreading & Copywriting</li>
-        </ul>
-      </div>
-    </section>
+  <!-- CV -->
+  <section id="cv" class="parallax">
+    <div class="parallax-bg" style="background-image:url('cv-bg.jpg');"></div>
+    <div class="content">
+      <h2>CV Writing & Portfolio</h2>
+      <p>Professional CVs and portfolios that stand out, get noticed, and help you land the opportunities you deserve.</p>
+    </div>
+  </section>
 
-    <section id="cv" class="parallax">
-      <div class="parallax-bg" style="background-image:url('cv-bg.jpg');"></div>
-      <div class="content">
-        <h2>CV Writing & Portfolio</h2>
-        <p>I create professional CVs and portfolios that get you noticed by employers and stand out in a competitive market.</p>
-      </div>
-    </section>
+  <!-- Contact -->
+  <section id="contact" class="parallax">
+    <div class="parallax-bg" style="background-image:url('contact-bg.jpg');"></div>
+    <div class="content">
+      <h2>Contact Me</h2>
+      <form id="contactForm" action="mailto:your-email@example.com" method="post">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
 
-    <section id="contact" class="parallax">
-      <div class="parallax-bg" style="background-image:url('contact-bg.jpg');"></div>
-      <div class="content">
-        <h2>Contact Me</h2>
-        <form id="contactForm" action="mailto:your-email@example.com" method="post">
-          <label for="name">Your Name:</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
 
-          <label for="email">Your Email:</label>
-          <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
 
-          <label for="message">Your Message:</label>
-          <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+</main>
 
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
-    </section>
-  </main>
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/27732286329" class="whatsapp-btn" target="_blank">WhatsApp</a>
+<button id="scrollTopBtn">↑</button>
 
-  <a href="https://wa.me/27732286329" class="whatsapp-btn" target="_blank">WhatsApp</a>
-  <button id="scrollTopBtn">↑</button>
-
-  <script src="particles.min.js"></script>
-  <script src="portfolio.js"></script>
+<script src="particles.min.js"></script>
+<script src="portfolio.js"></script>
 </body>
 </html>
