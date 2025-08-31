@@ -3,7 +3,8 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  background: url('background.jpg') center/cover no-repeat fixed;
+  background: url('images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
   color: #333;
 }
 
@@ -25,7 +26,10 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: padding 0.3s;
 }
+
+header.shrink { padding: 10px 0; }
 
 header h1 {
   font-family: 'Montserrat', sans-serif;
@@ -37,25 +41,25 @@ header .quote {
   font-style: italic;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.4em;
-  color: #ff0055;
+  color: #0077FF;
   margin: 10px 0;
   width: fit-content;
   margin-left:auto;
   margin-right:auto;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 2px solid #ff0055;
+  border-right: 2px solid #0077FF;
   animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+  transition: opacity 0.5s;
 }
+
+header.shrink .quote { opacity:0; }
 
 @keyframes typing {
   from { width: 0; }
   to { width: 100%; }
 }
-
-@keyframes blink {
-  50% { border-color: transparent; }
-}
+@keyframes blink { 50% { border-color: transparent; } }
 
 /* Nav */
 nav ul { list-style:none; padding:0; margin:10px 0 0 0; }
@@ -66,25 +70,31 @@ nav a {
 }
 nav a::after {
   content:''; display:block; width:0; height:2px;
-  background:#ff0055; position:absolute; bottom:0; left:0; transition: width 0.3s;
+  background:#0077FF; position:absolute; bottom:0; left:0; transition: width 0.3s;
 }
 nav a:hover::after { width:100%; }
-nav a:hover { transform: scale(1.05); color:#ff0055; }
+nav a:hover { transform: scale(1.05); color:#0077FF; }
 
 /* Sections */
 main { max-width:900px; margin:auto; padding:60px 20px; }
 section { margin-bottom:60px; opacity:0; transform:translateY(20px); transition:0.6s ease; }
 section.visible { opacity:1; transform:translateY(0); }
 section h2 { font-family:'Montserrat', sans-serif; font-size:1.8em; margin-bottom:15px; color:#222; }
+
 .cards { display:flex; flex-wrap:wrap; gap:20px; }
 .card {
   flex:1 1 250px; background:#fff; padding:20px; border-radius:10px;
-  box-shadow:0 4px 6px rgba(0,0,0,0.1); transition:0.3s;
+  box-shadow:0 4px 6px rgba(0,0,0,0.1); transition:0.3s; position:relative; cursor:pointer;
 }
-.card:hover {
-  transform:translateY(-15px) scale(1.05);
-  box-shadow:0 15px 30px rgba(0,0,0,0.25);
+.card:hover { transform:translateY(-15px) scale(1.05); box-shadow:0 15px 30px rgba(0,0,0,0.25); }
+.card::after {
+  content: attr(data-description);
+  position: absolute; top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.85); color:#fff; display:flex;
+  align-items:center; justify-content:center; text-align:center;
+  padding:15px; opacity:0; border-radius:10px; transition: opacity 0.3s;
 }
+.card:hover::after { opacity:1; }
 
 /* Form */
 form { display:flex; flex-direction:column; }
@@ -97,9 +107,6 @@ form button {
   transition:0.3s;
 }
 form button:hover { background:#555; }
-
-/* Footer */
-footer { background: rgba(51,51,51,0.9); color:#fff; text-align:center; padding:20px 0; }
 
 /* Floating WhatsApp */
 .whatsapp-btn {
@@ -117,3 +124,6 @@ footer { background: rgba(51,51,51,0.9); color:#fff; text-align:center; padding:
   background:#333; color:#fff; cursor:pointer; transition:0.3s;
 }
 #scrollTopBtn:hover { background:#555; }
+
+/* Background overlay */
+body::before { content:""; position:fixed; top:0; left:0; width:100%; height:100%; background-color: rgba(255,255,255,0.85); z-index:-1; }
