@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jwood - Futuristic Portfolio</title>
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  
-  <!-- CSS -->
-  <link rel="stylesheet" href="portfolio.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jwood - Futuristic Portfolio</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="portfolio.css">
+
+<!-- Particles.js -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="overlay"></div>
-    <h1 class="logo">Jwood</h1>
+<!-- Hero / Header -->
+<header>
+  <canvas id="particles-js"></canvas>
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1 class="logo gradient-text">Jwood</h1>
     <p class="quote">“Don’t wait for opportunity. Create it.”</p>
+    <p class="notice">⚠️ A deposit is required before any work commences. Ensures top-quality delivery.</p>
     <nav>
       <ul>
         <li><a href="#about">About Me</a></li>
@@ -26,69 +33,66 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <!-- Main -->
-  <main>
-    <!-- About Section -->
-    <section id="about">
-      <h2>About Me</h2>
-      <p>Hi, I’m <strong>Jwood</strong>—a futuristic web designer & developer creating <span class="highlight">adventurous, energetic, and professional experiences</span> for every user. Let's take your brand to the next dimension.</p>
-      <p class="notice">⚠️ <strong>Note:</strong> A deposit is required before any work commences. This ensures commitment and top-quality delivery.</p>
-    </section>
+<!-- Main Content -->
+<main>
+  <!-- About -->
+  <section id="about">
+    <h2 class="gradient-text">About Me</h2>
+    <p>Hi, I’m <strong>Jwood</strong>—crafting <span class="highlight">energetic, adventurous, and professional digital experiences</span>. I combine creativity and futuristic tech to elevate your brand beyond imagination.</p>
+  </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="cards">
-        <div class="card" data-description="Personal Blog: futuristic design, full responsive, sharing my journey and insights.">Personal Blog</div>
-        <div class="card" data-description="Small Business Website: tailored, professional, designed to convert visitors into clients.">Small Business Website</div>
-        <div class="card" data-description="Task Manager App: dynamic, interactive, futuristic UX to organize your life efficiently.">Task Manager App</div>
-      </div>
-    </section>
+  <!-- Projects -->
+  <section id="projects">
+    <h2 class="gradient-text">Projects</h2>
+    <div class="cards">
+      <div class="card" data-description="Personal Blog: immersive, responsive, futuristic storytelling.">Personal Blog</div>
+      <div class="card" data-description="Business Website: sleek, conversion-focused, professional UX.">Small Business Website</div>
+      <div class="card" data-description="Task Manager App: dynamic UX, productivity meets design.">Task Manager App</div>
+    </div>
+  </section>
 
-    <!-- Services Section -->
-    <section id="services">
-      <h2>Services</h2>
-      <div class="cards">
-        <div class="card" data-description="Professional CV writing to make you stand out in the competitive world.">CV Writing</div>
-        <div class="card" data-description="Custom web development for a futuristic online presence.">Web Development</div>
-        <div class="card" data-description="Creative graphic design for a visual impact that lasts.">Graphic Design</div>
-        <div class="card" data-description="Custom T-shirt & mug printing with fast delivery and creative designs.">T-shirt/Mug Printing</div>
-        <div class="card" data-description="Professional copywriting for websites, ads, and marketing campaigns.">Copywriting</div>
-        <div class="card" data-description="Proofreading & editing for flawless content that impresses.">Proofreading</div>
-      </div>
-    </section>
+  <!-- Services -->
+  <section id="services">
+    <h2 class="gradient-text">Services</h2>
+    <div class="cards">
+      <div class="card" data-description="CV Writing: professional, ATS-ready, impactful.">CV Writing</div>
+      <div class="card" data-description="Web Development: futuristic, custom, responsive.">Web Development</div>
+      <div class="card" data-description="Graphic Design: creative, visually stunning.">Graphic Design</div>
+      <div class="card" data-description="T-shirt/Mug Printing: customized with high quality.">T-shirt/Mug Printing</div>
+      <div class="card" data-description="Copywriting: persuasive, professional, precise.">Copywriting</div>
+      <div class="card" data-description="Proofreading: flawless, professional, accurate.">Proofreading</div>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <p>📞 Call me: 
-        <a href="tel:+277732286329">+27 773 228 6329</a> / 
-        <a href="tel:+27684582879">+27 68 458 2879</a>
-      </p>
-      <form id="contactForm" action="https://formspree.io/f/your-endpoint" method="POST">
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" placeholder="Your Name" required>
+  <!-- Contact -->
+  <section id="contact">
+    <h2 class="gradient-text">Contact Me</h2>
+    <p>📞 Call me: <a href="tel:+277732286329">+27 773 228 6329</a> / <a href="tel:+27684582879">+27 68 458 2879</a></p>
+    <form id="contactForm" action="https://formspree.io/f/your-endpoint" method="POST">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
 
-        <label for="email">Your Email:</label>
-        <input type="email" id="email" name="email" placeholder="Your Email" required>
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
 
-        <label for="message">Your Message:</label>
-        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" placeholder="Your Message" required></textarea>
 
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
-  </main>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+</main>
 
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/277732286329" target="_blank" class="whatsapp-btn">💬 WhatsApp</a>
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/277732286329" target="_blank" class="whatsapp-btn">💬 WhatsApp</a>
 
-  <!-- Scroll to Top -->
-  <button id="scrollTopBtn">↑</button>
+<!-- Scroll to Top -->
+<button id="scrollTopBtn">↑</button>
 
-  <!-- JS -->
-  <script src="portfolio.js"></script>
+<!-- JS -->
+<script src="portfolio.js"></script>
 </body>
 </html>
