@@ -1,38 +1,27 @@
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-  anchor.addEventListener('click', function(e){
+// Smooth scroll for nav links
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', e => {
     e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+    document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
   });
 });
 
-// Fade in sections
+// Reveal sections on scroll
 const sections = document.querySelectorAll('section');
-const revealSection = () => { sections.forEach(section => {
-  const top = section.getBoundingClientRect().top;
-  if(top < window.innerHeight - 100) section.classList.add('visible');
-})};
-window.addEventListener('scroll', revealSection);
-window.addEventListener('load', revealSection);
+const reveal = () => {
+  const triggerBottom = window.innerHeight / 1.1;
+  sections.forEach(section => {
+    const sectionTop = section.getBoundingClientRect().top;
+    if(sectionTop < triggerBottom){ section.classList.add('visible'); }
+  });
+};
+window.addEventListener('scroll', reveal);
+window.addEventListener('load', reveal);
 
-// Scroll-to-top button
+// Scroll to top button
 const scrollBtn = document.getElementById('scrollTopBtn');
-window.addEventListener('scroll',()=>{scrollBtn.style.display = (window.scrollY>300)?'block':'none';});
-scrollBtn.onclick = ()=> window.scrollTo({top:0,behavior:'smooth'});
+window.onscroll = () => { scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none'; }
+scrollBtn.addEventListener('click', () => { window.scrollTo({top:0, behavior:'smooth'}); });
 
-// Header shrink
-const header = document.querySelector('header');
-window.addEventListener('scroll',()=>{(window.scrollY>100)?header.classList.add('shrink'):header.classList.remove('shrink');});
-
-// Initialize particles.js
-particlesJS("particles-js", {
-  "particles": {
-    "number": { "value": 80 },
-    "color": { "value": ["#00BFA6","#FFD166","#0D1B2A"] },
-    "shape": { "type":"circle" },
-    "opacity": { "value":0.5 },
-    "size": { "value":3 },
-    "line_linked": { "enable":true, "distance":150, "color":"#0D1B2A", "opacity":0.4, "width":1 },
-    "move": { "enable":true, "speed":2 }
-  }
-});
+// Particle.js initialization
+particlesJS.load('particles-js', 'particles.json', function() { console.log('Particles Loaded'); });
