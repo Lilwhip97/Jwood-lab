@@ -1,56 +1,78 @@
-// Typing animation
+// Typed Text
 const typedText = document.getElementById('typed-text');
-const phrases = ["Innovation is the only way forward.","I craft futuristic web experiences.","Your vision, my code.","Let's create the future together."];
-let i=0,j=0,current=[],isDeleting=false,typeSpeed=100;
-function type(){ 
-  if(i>=phrases.length)i=0;
-  const full=phrases[i];
-  isDeleting?current=full.substring(0,current.length-1):current=full.substring(0,current.length+1);
-  typedText.textContent=current;
-  if(!isDeleting&&current===full){ isDeleting=true; typeSpeed=50; setTimeout(type,1500);}
-  else if(isDeleting&&current===""){ isDeleting=false; i++; typeSpeed=100; setTimeout(type,500);}
-  else{ setTimeout(type,typeSpeed);}
+const textArray = ["Future Web Developer","Creative Designer","Digital Adventurer"];
+let arrayIndex=0,textIndex=0;
+function type(){
+  if(textIndex<textArray[arrayIndex].length){
+    typedText.textContent += textArray[arrayIndex][textIndex];
+    textIndex++;
+    setTimeout(type,100);
+  } else { setTimeout(erase,1500); }
 }
-document.addEventListener("DOMContentLoaded", type);
+function erase(){
+  if(textIndex>0){
+    typedText.textContent = textArray[arrayIndex].substring(0,textIndex-1);
+    textIndex--;
+    setTimeout(erase,50);
+  } else { arrayIndex=(arrayIndex+1)%textArray.length; setTimeout(type,500); }
+}
+document.addEventListener("DOMContentLoaded",type);
 
-// Smooth scroll
-document.querySelectorAll('nav a').forEach(link=>link.addEventListener('click',e=>{ e.preventDefault(); document.querySelector(link.getAttribute('href')).scrollIntoView({behavior:'smooth'});}));
-
-// Section reveal
-const sections=document.querySelectorAll('section, .parallax');
-const reveal=()=>{ const trigger=window.innerHeight/1.1; sections.forEach(section=>{ const top=section.getBoundingClientRect().top; if(top<trigger) section.classList.add('visible'); }); };
-window.addEventListener('scroll',reveal);
-window.addEventListener('load',reveal);
-
-// Scroll to top
-const scrollBtn=document.getElementById('scrollTopBtn');
-window.addEventListener('scroll',()=>{ scrollBtn.style.display=window.scrollY>300?'block':'none'; });
-scrollBtn.addEventListener('click',()=>{ window.scrollTo({top:0,behavior:'smooth'}); });
-
-// Header collapse
-const header=document.getElementById('header');
-window.addEventListener('scroll',()=>{ window.scrollY>100?header.classList.add('shrink'):header.classList.remove('shrink'); });
-
-// Cards tilt effect
-const cards=document.querySelectorAll('.card');
-cards.forEach(card=>{
-  card.addEventListener('mousemove',e=>{
-    const rect=card.getBoundingClientRect();
-    const x=e.clientX-rect.left, y=e.clientY-rect.top, centerX=rect.width/2, centerY=rect.height/2;
-    const rotateX=((y-centerY)/centerY)*10, rotateY=((x-centerX)/centerX)*10;
-    card.style.transform=`rotateY(${rotateY}deg) rotateX(${-rotateX}deg) scale(1.05)`;
-  });
-  card.addEventListener('mouseleave',()=>{ card.style.transform='rotateY(0deg) rotateX(0deg) scale(1)'; });
+// Theme Toggle
+const themeBtn = document.getElementById('themeToggle');
+themeBtn.addEventListener('click',()=>{
+  document.body.classList.toggle('light');
+  themeBtn.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';
 });
 
-// Parallax
-const parallaxSections=document.querySelectorAll('.parallax');
+// Scroll-triggered sections
+const parallaxSections = document.querySelectorAll('.parallax');
 window.addEventListener('scroll',()=>{
-  const scrollTop=window.scrollY;
+  const trigger = window.innerHeight/1.2;
   parallaxSections.forEach(section=>{
-    const bg=section.querySelector('.parallax-bg');
-    const rect=section.getBoundingClientRect();
-    const offset=rect.top/window.innerHeight;
-    bg.style.transform=`translateY(${offset*50}px)`;
+    const top = section.getBoundingClientRect().top;
+    if(top<trigger){section.classList.add('visible'); section.querySelector('.parallax-bg').classList.add('active');}
   });
+});
+
+// Hero interactive SVG background
+const svgBg = document.getElementById('interactive-svg-bg');
+function createCircle(x,y){
+  const circle=document.createElementNS("http://www.w3.org/2000/svg","circle");
+  circle.setAttribute("cx",x);
+  circle.setAttribute("cy",y);
+  circle.setAttribute("r",Math.random()*10+5);
+  circle.setAttribute("fill","rgba(255,255,255,0.1)");
+  svgBg.appendChild(circle);
+  setTimeout(()=>circle.remove(),2000);
+}
+document.addEventListener('mousemove', e=>{createCircle(e.clientX,e.clientY);});
+
+// Hero light refraction
+const heroContent = document.querySelector('.hero-content');
+document.addEventListener('mousemove', e=>{
+  const x=e.clientX/window.innerWidth-0.5;
+  const y=e.clientY/window.innerHeight-0.5;
+  heroContent.style.transform = `translate(${x*20}px, ${y*20}px)`;
+});
+
+// Scroll Top button
+const scrollBtn=document.getElementById('scrollTopBtn');
+window.addEventListener('scroll',()=>{
+  if(window.scrollY>500){scrollBtn.style.display='block';} else {scrollBtn.style.display='none';}
+});
+scrollBtn.addEventListener('click',()=>{window.scrollTo({top:0, behavior:'smooth'});});
+
+// Particles.js initialization
+particlesJS("particles-js",{
+  "particles": {
+    "number":{"value":80,"density":{"enable":true,"value_area":800}},
+    "color":{"value":"#ffffff"},
+    "shape":{"type":"circle"},
+    "opacity":{"value":0.7,"random":true},
+    "size":{"value":3,"random":true},
+    "line_linked":{"enable":true,"distance":150,"color":"#ffffff","opacity":0.4,"width":1},
+    "move":{"enable":true,"speed":4,"direction":"none","random":true,"straight":false,"out_mode":"out"}
+  },
+  "interactivity":{"events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"}}}
 });
