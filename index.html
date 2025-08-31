@@ -9,12 +9,12 @@
 </head>
 <body>
   <!-- Header / Hero -->
-  <header>
+  <header id="header">
     <div id="particles-js"></div>
     <div class="overlay"></div>
     <div class="hero-content">
       <h1 class="logo">Jwood</h1>
-      <p class="quote">"Innovation is the only way forward"</p>
+      <p class="quote"><span id="typed-text"></span><span class="cursor">|</span></p>
       <p class="notice">Deposit is required before work commences</p>
       <nav>
         <ul>
@@ -29,58 +29,67 @@
   </header>
 
   <main>
-    <!-- About -->
-    <section id="about">
-      <h2>About Me</h2>
-      <p>Hello! I'm Jwood, a passionate web developer, designer, and creative futurist. I craft experiences that push the limits of imagination and deliver results.</p>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects">
-      <h2>My Projects</h2>
-      <div class="cards">
-        <div class="card" data-description="A personal blog sharing my journey and insights into web development.">Personal Blog</div>
-        <div class="card" data-description="Websites for small businesses with modern UX/UI design.">Business Sites</div>
-        <div class="card" data-description="Task & goal management web application with futuristic features.">Task Manager</div>
+    <section id="about" class="parallax">
+      <div class="parallax-bg" style="background-image:url('jwood.jpg');"></div>
+      <div class="content">
+        <h2>About Me</h2>
+        <p>Hello! I'm Jwood, a passionate web developer, designer, and creative futurist. I craft experiences that push the limits of imagination and deliver results.</p>
       </div>
     </section>
 
-    <!-- Services -->
-    <section id="services">
-      <h2>Services</h2>
-      <ul>
-        <li>Web Development</li>
-        <li>Graphic Design</li>
-        <li>T-shirt & Mug Printing</li>
-        <li>Proofreading & Copywriting</li>
-      </ul>
+    <section id="projects" class="parallax">
+      <div class="parallax-bg" style="background-image:url('projects-bg.jpg');"></div>
+      <div class="content">
+        <h2>My Projects</h2>
+        <div class="cards">
+          <div class="card" data-description="A personal blog sharing my journey and insights into web development.">Personal Blog</div>
+          <div class="card" data-description="Websites for small businesses with modern UX/UI design.">Business Sites</div>
+          <div class="card" data-description="Task & goal management web application with futuristic features.">Task Manager</div>
+        </div>
+      </div>
     </section>
 
-    <!-- CV Writing -->
-    <section id="cv">
-      <h2>CV Writing & Portfolio</h2>
-      <p>I create professional CVs and portfolios that get you noticed by employers and stand out in a competitive market.</p>
+    <section id="services" class="parallax">
+      <div class="parallax-bg" style="background-image:url('services-bg.jpg');"></div>
+      <div class="content">
+        <h2>Services</h2>
+        <ul>
+          <li>Web Development</li>
+          <li>Graphic Design</li>
+          <li>T-shirt & Mug Printing</li>
+          <li>Proofreading & Copywriting</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <form id="contactForm" action="mailto:your-email@example.com" method="post">
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" placeholder="Your Name" required>
+    <section id="cv" class="parallax">
+      <div class="parallax-bg" style="background-image:url('cv-bg.jpg');"></div>
+      <div class="content">
+        <h2>CV Writing & Portfolio</h2>
+        <p>I create professional CVs and portfolios that get you noticed by employers and stand out in a competitive market.</p>
+      </div>
+    </section>
 
-        <label for="email">Your Email:</label>
-        <input type="email" id="email" name="email" placeholder="Your Email" required>
+    <section id="contact" class="parallax">
+      <div class="parallax-bg" style="background-image:url('contact-bg.jpg');"></div>
+      <div class="content">
+        <h2>Contact Me</h2>
+        <form id="contactForm" action="mailto:your-email@example.com" method="post">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
 
-        <label for="message">Your Message:</label>
-        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+          <label for="email">Your Email:</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
 
-        <button type="submit">Send Message</button>
-      </form>
+          <label for="message">Your Message:</label>
+          <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
     </section>
   </main>
 
-  <!-- Floating Buttons -->
   <a href="https://wa.me/27732286329" class="whatsapp-btn" target="_blank">WhatsApp</a>
   <button id="scrollTopBtn">↑</button>
 
