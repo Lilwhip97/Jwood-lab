@@ -15,7 +15,7 @@ const revealSection = () => { sections.forEach(section => {
 window.addEventListener('scroll', revealSection);
 window.addEventListener('load', revealSection);
 
-// Scroll-to-top
+// Scroll-to-top button
 const scrollBtn = document.getElementById('scrollTopBtn');
 window.addEventListener('scroll',()=>{scrollBtn.style.display = (window.scrollY>300)?'block':'none';});
 scrollBtn.onclick = ()=> window.scrollTo({top:0,behavior:'smooth'});
@@ -24,15 +24,15 @@ scrollBtn.onclick = ()=> window.scrollTo({top:0,behavior:'smooth'});
 const header = document.querySelector('header');
 window.addEventListener('scroll',()=>{(window.scrollY>100)?header.classList.add('shrink'):header.classList.remove('shrink');});
 
-// Initialize particles
+// Initialize particles.js
 particlesJS("particles-js", {
   "particles": {
     "number": { "value": 80 },
-    "color": { "value": ["#00f0ff","#ff00ff","#ff6600"] },
+    "color": { "value": ["#00BFA6","#FFD166","#0D1B2A"] },
     "shape": { "type":"circle" },
     "opacity": { "value":0.5 },
     "size": { "value":3 },
-    "line_linked": { "enable":true, "distance":150, "color":"#fff", "opacity":0.4, "width":1 },
+    "line_linked": { "enable":true, "distance":150, "color":"#0D1B2A", "opacity":0.4, "width":1 },
     "move": { "enable":true, "speed":2 }
   }
 });
